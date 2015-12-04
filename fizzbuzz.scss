@@ -1,0 +1,19 @@
+$c: "";
+$count: 100;
+
+@for $i from 1 through $count {
+  @if $i % 3 == 0 {
+    $c: append($c," Fizz\a");
+  } @elseif $i % 5 == 0 {
+    $c: append($c," Buzz\a");
+  } @elseif $i % 3 == 0 and $i % 5 == 0 {
+    $c: append($c," FizzBuzz\a");
+  } @else {
+    $c: append($c," #{$i}\a");
+  }
+}
+
+.fizzbuzz:after {
+  content: $c;
+  white-space: pre;
+}
