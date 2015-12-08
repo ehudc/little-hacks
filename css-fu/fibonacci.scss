@@ -1,0 +1,13 @@
+@function fib($n) {
+  $c: "";
+  @if $n <= 1 {
+    @return $n;
+  } @else {
+    @return (fib( $n - 1 ) + fib( $n - 2 ));
+  }
+}
+
+.fizzbuzz:after {
+  content: "The answer is #{fib(8) + fib(8)}";
+  white-space: pre;
+}
